@@ -1,0 +1,22 @@
+/*
+Theme Name: Kingsmead Centre
+Author: Rodelio Dahay
+Version: 1
+*/
+
+h2.wp-block-heading{
+    font-size: 40px;
+    line-height: 50px;
+    margin-bottom: 1.5rem;
+}
+
+.btn-dark-blue {
+    background: #183878!important;
+    border-color:#183878!important;
+    color: #fff;
+}
+
+.btn-dark-blue:hover{
+    background: #1d438f!important;
+    border-color:#1d438f!important;
+}
