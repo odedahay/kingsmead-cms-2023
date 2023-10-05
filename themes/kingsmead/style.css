@@ -1,6 +1,9 @@
 /*
 Theme Name: Kingsmead Centre
-Author: Rodelio Dahay
+Theme URI: https://odedahay.github.io/
+Author: Rodelio
+Author URI: https://odedahay.github.io/
+Description: This is my custom theme
 Version: 1
 */
 
@@ -8,6 +11,20 @@ h2.wp-block-heading{
     font-size: 40px;
     line-height: 50px;
     margin-bottom: 1.5rem;
+}
+
+.container.page h3{
+    font-family: "Bitter", serif;
+    font-size: 1.75rem;
+    color: #363636;
+    font-weight: 600;
+    line-height: 1.125;
+    margin-bottom: 25px;
+}
+
+.container.page li {
+    margin-left: 20px;
+    list-style: disc;
 }
 
 .btn-dark-blue {
@@ -20,3 +37,22 @@ h2.wp-block-heading{
     background: #1d438f!important;
     border-color:#1d438f!important;
 }
+
+.wp-block-quote{
+    font-size: 25px;
+    line-height: 50px;
+    font-weight: normal;
+    padding: 0px 25px 0px 85px;
+    margin: 65px 0 65px 0 !important;
+    position: relative;
+}
+.wp-block-quote::before{
+    content: "";
+    width: 55px;
+    height: 2px;
+    background: var(--is-orange);
+    position: absolute;
+    top: 25px;
+    left: 0;
+}
+

@@ -114,50 +114,70 @@
 			</div>
 		</div>
 
-		<div class="columns">
-			<div class="column is-1">
-				<div class="event-date is-flex is-justify-content-center is-align-content-center">
-					<div>
-						<div class="event-date-day text-color">20</div>
-						<div class="event-date-month">Jun</div>
-					</div>
-				</div>
-			</div>
-			<div class="column is-5">
-				<img src="https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright.jpg" 
-					srcset="https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright-300x169.jpg 300w, 
-					https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright-600x338.jpg 600w, 
-					https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright-768x432.jpg 768w, 
-					https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright-1024x576.jpg 1024w, 
-					https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright-370x208.jpg 370w, 
-					https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright-1170x658.jpg 1170w, 
-					https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright-760x428.jpg 760w, 
-					https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright-594x333.jpg 594w, 
-					https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright-270x152.jpg 270w, 
-					https://hallelujah.axiomthemes.com/wp-content/uploads/2019/01/post-11-copyright.jpg 1920w" 
-					alt="" title="post-11-copyright" class="tribe-events-calendar-list__event-featured-image">
-			</div>
-			<div class="column">
-				<p class="h6 text-color is-size-6"><i class="icofont-calendar text-color mr-2"></i> Jun 20, 2024 @ 10:00 am - Jul 9, 2024 @ 3:30 pm</p>
-				<h2 class="content-title mb-4 is-size-3">Support Groups: May the God Be with You</h2>
-				<p class=" mb-4">By: Fr. Francis Lim, LJ</p>
-				<p class="mb-6">For those who need God`s help, we are happy to see you at our group meetings. Find a new purpose in life, start a new path by taking His Word and transforming it into the light that will lead you through the darkest times. Join our community for more information and become</p>
-				<a href="#" class="btn btn-main is-rounded">Learn More</a>
-			</div>
-		</div>
+        <?php 
+			$today = date('Ymd');
+			$homepageEvents = new WP_Query(array(
+            'posts_per_page' => 2,
+            'post_type' => 'event',
+			'meta_key' => 'event_date',
+			'orderby' => 'meta_value_num',
+			'order' => 'ASC',
+			'meta_query' => array(
+				array(
+					'key' => 'event_date',
+					'compare' => '>=',
+					'value' => $today,
+					'type' => 'numeric'
+				)
+			)
 
-		
-		<section>
-			<div class="container">
-				<div class="column">
-					<div class="column lg-12">
-						<div class="section-divider"></div>
-					</div>
-				</div>
-			</div>
-		</section>
+        )); 
+        
+        while($homepageEvents->have_posts()){
+            $homepageEvents->the_post(); ?>
 
-		<div>
+            <div class="columns is-mobile">
+                <div class="column is-1">
+                    <div class="event-date is-flex is-justify-content-center is-align-content-center">
+                        <div>
+                            <div class="event-date-day text-color">
+								<?php 
+									$eventDate = new DateTime(get_field('event_date'));
+									echo $eventDate->format('d');
+								?>
+							</div>
+                            <div class="event-date-month"><?php echo $eventDate->format('M'); ?></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-fifth" style="">
+                    <?php the_post_thumbnail(); ?>
+                </div>
+                <div class="column">
+                    <p class="h6 text-color is-size-6"><i class="icofont-calendar text-color mr-2"></i> Jun 20, 2024 @ 10:00 am - Jul 9, 2024 @ 3:30 pm</p>
+                    <h2 class="content-title mb-4 is-size-3"><?php the_title(); ?></h2>
+                    <p class="mb-6"><?php 
+                        if(has_excerpt()){
+                            the_excerpt(); 
+                        } else{
+                        echo wp_trim_words(get_the_content(), 24);
+                        }?></p>
+                    <a href="<?php the_permalink(); ?>" class="btn btn-main is-rounded">Learn More</a>
+                </div>
+		    </div>
+            <section>
+                <div class="container">
+                    <div class="column">
+                        <div class="column lg-12">
+                            <div class="section-divider"></div>
+                        </div>
+                    </div>
+                </div>
+		    </section>
+            
+        <?php } wp_reset_postdata(); ?>
+
+		<!-- <div>
 			
 			<div class="columns">
 				<div class="column is-1">
@@ -186,30 +206,8 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div>
-			<div class="columns">
-				<div class="column is-1">
-					<div class="event-date is-flex is-justify-content-center is-align-content-center">
-						<div>
-							<div class="event-date-day text-color">20</div>
-							<div class="event-date-month">Jun</div>
-						</div>
-					</div>
-				</div>
-				<div class="column">
-					<p class="h6 text-color is-size-6"><i class="icofont-calendar text-color mr-2"></i> Jun 20, 2024 @ 10:00 am - Jul 9, 2024 @ 3:30 pm</p>
-					<h3 class="mb-4 is-size-3"><a href="cause-single.html">Clean Drink Water</a></h3>
-					<p class=" mb-4">By: Fr. Francis Lim, LJ</p>
-				</div>
-				<div class="column is-3">
-					<div class="mt-5">
-						<a href="donation.html" class="btn btn-main-2 is-rounded">Learn more</a>
-					</div>
-				</div>
-			</div>
-			
-		</div>
+		</div> -->
+		
 		
 	</div>
 </section>
@@ -217,8 +215,10 @@
 	<div class="container">
 		<div class="columns is-justify-content-center">
 			<div class="column">
-				<div class="is-flex is-justify-content-flex-start">
-					<h3 class="mt-4 mb-5"><a href="" class="more-btns">More Events <i class="icofont-rounded-right"></i></a></h3>
+				<div class="is-flex is-justify-content-start">
+					<h3 class="mt-4 mb-5">
+						<a href="<?php echo get_post_type_archive_link('event'); ?>" class="more-btns">See More Events <i class="icofont-rounded-right"></i></a>
+					</h3> 
 					<!-- <p class="mt-5"><a href="#" > More Events <i class="icofont-arrow-right"></i></a></p> -->
 				</div>
 			</div>
@@ -240,7 +240,7 @@
 	<div class="columns is-justify-content-center">
 		<div class="column is-7-desktop is-8-tablet">
 			<div class="section-title has-text-centered">
-				<h2 class="mt-4 mb-5 is-relative content-title">Newsletter & Articles</h2>
+				<h2 class="mt-4 mb-5 is-relative content-title">Newsletters & Articles</h2>
 			</div>
 		</div>
 	</div>
@@ -248,24 +248,31 @@
 <div class="volunteer section ">
 	<div class="container">
 		<div class="columns is-multiline">
-			<div class="column is-6-desktop is-12-tablet">
+            <?php $args = array(
+                'post_type' => 'post',
+                'posts_per_type' => 2.,
+                'category_name' => 'articles'
+            ); 
+            $postDisplay = new WP_Query($args);
+
+            while( $postDisplay->have_posts() ){
+            $postDisplay->the_post(); ?>
+                
+            <div class="column is-6-desktop is-12-tablet">
 				<div class="volunteer-content">
 					<img src="<?php echo get_theme_file_uri('images/bg/image-5.jpg'); ?>" alt="" class="">
-					<h2 class="text-md mb-5 mt-3">We can’t help everyone, but everyone can help someone</h2>
-					<p>Assumenda reiciendis delectus dolore incidunt molestias omnis quo quaerat voluptate, eligendi perspiciatis ipsa laudantium nesciunt officia, odit nemo quidem hic itaque. Fugiat.</p>
-					<a href="#" class="btn btn-main is-rounded mt-5">Send Message</a>
+					<h2 class="text-md mb-5 mt-3"><?php the_title(); ?></h2>
+					<p><?php if(has_excerpt()){
+                        the_excerpt();
+                    }else{
+                        echo wp_trim_words(get_the_content(), 22);
+                    }
+                    ?></p>
+					<a href="<?php the_permalink(); ?>" class="btn btn-main is-rounded mt-5">Read More</a>
 				</div>
 			</div>
-
-			<div class="column is-6-desktop is-12-tablet">
-
-				<div class="volunteer-content">
-					<img src="<?php echo get_theme_file_uri('images/bg/image-5.jpg'); ?>" alt="" class="">
-					<h2 class="text-md mb-5 mt-3">We can’t help everyone, but everyone can help someone</h2>
-					<p>Assumenda reiciendis delectus dolore incidunt molestias omnis quo quaerat voluptate, eligendi perspiciatis ipsa laudantium nesciunt officia, odit nemo quidem hic itaque. Fugiat.</p>
-					<a href="#" class="btn btn-main is-rounded mt-5">Send Message</a>
-				</div>
-			</div>
+            
+            <?php } wp_reset_postdata(); ?>
 		</div>
 	</div>
 </div>
@@ -276,8 +283,7 @@
 		<div class="columns is-justify-content-center">
 			<div class="column">
 				<div class="is-flex is-justify-content-flex-start">
-					<h3 class="mt-4 mb-5"><a href="" class="more-btns">More Newsletter & Articles <i class="icofont-rounded-right"></i></a></h3>
-					<!-- <p class="mt-5"><a href="#" > More Events <i class="icofont-arrow-right"></i></a></p> -->
+					<h3 class="mt-4 mb-5"><a href="<?php echo site_url('/newsletters-articles')?>" class="more-btns">More Newsletter & Articles <i class="icofont-rounded-right"></i></a></h3>
 				</div>
 			</div>
 		</div>
@@ -301,7 +307,7 @@
 					<img src="<?php echo get_theme_file_uri('images/council.svg'); ?>" class="council-icon">
 					<h2 class="text-white text-lg mb-3 mt-4">Explore Our Facilities</h2>
 					<p class="text-white mb-6">Kingsmead Centre offers counselling and psychotherapy services to promote the psychological health and well-being of each person. The Centre has a team of trained counsellors who provide counselling to individuals, couples and families. </p>
-					<a href="donation.html" class="btn btn-main is-rounded">Learn more</a>
+					<a href="<?php echo site_url('/facilities'); ?>" class="btn btn-main is-rounded">Learn more</a>
 				</div>
 			</div>
 		</div>

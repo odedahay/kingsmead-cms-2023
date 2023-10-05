@@ -21,10 +21,10 @@
 				<div class="column is-6-desktop is-8-tablet">
 					<div class="header-top-right has-text-right-tablet has-text-centered-mobile">
 						<a href="https://www.facebook.com/themefisher" target="_blank"><i class="icofont-facebook"></i></a>
-						<a href="https://twitter.com/themefisher" target="_blank"><i class="icofont-youtube-play"></i></a>
-						<a href="https://github.com/themefisher/" target="_blank"><i class="icofont-phone"></i></a>
+						<a href="#" target="_blank"><i class="icofont-youtube-play"></i></a>
+						<a href="#" target="_blank"><i class="icofont-phone"></i></a>
 						<!-- <a href="#" class="top-btn"><i class="icofont-ui-search"></i></a> -->
-						<a href="#" class="top-btn">Donate</a>
+						<a href="<?php echo site_url('/donation'); ?>" class="top-btn">Donate</a>
 					</div>
 				</div>
 			</div>
@@ -57,20 +57,20 @@
 						<a href="#" class="navbar-link">Programmes<span class="ml-1"><i class="icofont-rounded-down"></i></span></a>
 						<div class="navbar-dropdown has-shadow">
 							<a class="navbar-item" href="<?php echo site_url('/retreat'); ?>">Retreat</a>
-							<a class="navbar-item" href="#">Spiritual Direction</a>
-							<a class="navbar-item" href="#">Counselling</a>
-							<a class="navbar-item" href="#">Events</a>
+							<a class="navbar-item" href="<?php echo site_url('/spiritual-direction'); ?>">Spiritual Direction</a>
+							<a class="navbar-item" href="<?php echo site_url('/counselling'); ?>">Counselling</a>
+							<a class="navbar-item" href="<?php echo site_url('/events'); ?>">Events</a>
 						</div>
 					</li>
 					<li class="navbar-item has-dropdown is-hoverable">
-						<a href="<?php echo site_url('/newsletters-articles');?>" class="navbar-link">Newsletter & Articles</a>
+						<a href="<?php echo site_url('/newsletters-articles');?>" class="navbar-link">Newsletters & Articles</a>
 					</li>
 					<li class="navbar-item has-dropdown is-hoverable">
-						<a href="#" class="navbar-link">Ignatian Spirituality</a>
+						<a href="<?php echo site_url('/ignatian-spirituality'); ?>" class="navbar-link">Ignatian Spirituality</a>
 					</li>
 					
 					<li class="navbar-item">
-						<a href="#" class="navbar-link" >Contact Us</a>
+						<a href="<?php echo site_url('/contact-us'); ?>" class="navbar-link" >Contact Us</a>
 					</li>
 				</ul>
 			</div>
