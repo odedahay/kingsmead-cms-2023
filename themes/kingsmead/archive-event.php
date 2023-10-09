@@ -40,9 +40,11 @@
                     <?php the_post_thumbnail(); ?>
                 </div>
                 <div class="column">
-                    <p class="h6 text-color is-size-6"><i class="icofont-calendar text-color mr-2"></i> Jun 20, 2024 @ 10:00 am - Jul 9, 2024 @ 3:30 pm</p>
+                    <p class="h6 text-color is-size-6">
+					<i class="icofont-clock-time mr-1"></i> <?php echo get_field('event_start_time') . " - " . get_field('event_end_time'); ?> 
+						<i class="icofont-calendar text-color ml-4 mr-1"></i>  <?php echo $eventDate->format('d F, Y'); ?></p>
+					</p>
                     <h2 class="content-title mb-4 is-size-3"><?php the_title(); ?></h2>
-                    <p class=" mb-4">By: Fr. Francis Lim, LJ</p>
                     <p class="mb-4"><?php 
                         if(has_excerpt()){
                             the_excerpt(); 
@@ -94,8 +96,7 @@
 				</div>
 			</div>s
 		</div> -->
-		
-		
+	
 	</div>
 </section>
 <section>

@@ -117,7 +117,7 @@
         <?php 
 			$today = date('Ymd');
 			$homepageEvents = new WP_Query(array(
-            'posts_per_page' => 2,
+            'posts_per_page' => 1,
             'post_type' => 'event',
 			'meta_key' => 'event_date',
 			'orderby' => 'meta_value_num',
@@ -154,7 +154,9 @@
                     <?php the_post_thumbnail(); ?>
                 </div>
                 <div class="column">
-                    <p class="h6 text-color is-size-6"><i class="icofont-calendar text-color mr-2"></i> Jun 20, 2024 @ 10:00 am - Jul 9, 2024 @ 3:30 pm</p>
+					<p class="h6 text-color is-size-6">
+						<i class="icofont-clock-time mr-1"></i> <?php echo get_field('event_start_time') . " - " . get_field('event_end_time'); ?> 
+						<i class="icofont-calendar text-color ml-4 mr-1"></i>  <?php echo $eventDate->format('d F, Y'); ?></p>
                     <h2 class="content-title mb-4 is-size-3"><?php the_title(); ?></h2>
                     <p class="mb-6"><?php 
                         if(has_excerpt()){
@@ -177,39 +179,70 @@
             
         <?php } wp_reset_postdata(); ?>
 
-		<!-- <div>
-			
+		<div>
+
+	<?php 
+		$today = date('Ymd');
+		$homepageSubEvents = new WP_Query(array(
+        'posts_per_page' => 2,
+		'offset'        => 1,
+        'post_type' => 'event',
+		'meta_key' => 'event_date',
+		'orderby' => 'meta_value_num',
+		'order' => 'ASC',
+		'meta_query' => array(
+			array(
+				'key' => 'event_date',
+				'compare' => '>=',
+				'value' => $today,
+				'type' => 'numeric'
+			)
+		)
+
+    )); 
+	
+		while($homepageSubEvents->have_posts()) { 
+			$homepageSubEvents->the_post()?>
+
 			<div class="columns">
-				<div class="column is-1">
-					<div class="event-date is-flex is-justify-content-center is-align-content-center">
-						<div>
-							<div class="event-date-day text-color">21</div>
-							<div class="event-date-month">Jun</div>
+			<div class="column is-1">
+				<div class="event-date is-flex is-justify-content-center is-align-content-center">
+				<div>
+                        <div class="event-date-day text-color">
+							<?php 
+								$eventDate2 = new DateTime(get_field('event_date'));
+								echo $eventDate2->format('d');
+							?>
 						</div>
-					</div>
-				</div>
-				<div class="column">
-					<p class="h6 text-color is-size-6"><i class="icofont-calendar text-color mr-2"></i> Jun 21, 2024 @ 10:00 am - Jul 9, 2024 @ 3:30 pm</p>
-					<h3 class="mb-4 is-size-3"><a href="cause-single.html">Season of Creation: Love of God in Creation</a></h3>
-					<p class=" mb-4">By: Fr. Francis Lim, LJ</p>
-				</div>
-				<div class="column is-3">
-					<div class="mt-5">
-						<a href="donation.html" class="btn btn-main-2 is-rounded">Learn more</a>
-					</div>
+                        <div class="event-date-month"><?php echo $eventDate2->format('M'); ?></div>
+                    </div>
 				</div>
 			</div>
-			<div class="container">
-				<div class="column mt-0 pt-0">
-					<div class="column mt-0 pt-0 lg-12">
-						<div class="section-divider"></div>
-					</div>
+			<div class="column">
+				<p class="h6 text-color is-size-6">
+					<i class="icofont-clock-time mr-1"></i> <?php echo get_field('event_start_time') . " - " . get_field('event_end_time') ?> 
+					<i class="icofont-calendar text-color ml-4 mr-1"></i> <?php echo $eventDate2->format('d F, Y'); ?></p>
+				<h3 class="mb-4 is-size-3"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
+			</div>
+			<div class="column is-3">
+				<div class="mt-5">
+					<a href="<?php the_permalink(); ?>" class="btn btn-main-2 is-rounded">Learn more</a>
 				</div>
 			</div>
-		</div> -->
-		
-		
-	</div>
+		</div>
+		<div class="container">
+			<div class="column mt-0 pt-0">
+				<div class="column mt-0 pt-0 lg-12">
+					<div class="section-divider"></div>
+				</div>
+			</div>
+		</div>
+	</div> 
+	<?php } wp_reset_postdata();?>
+</div>
+
+	
+
 </section>
 <section>
 	<div class="container">
