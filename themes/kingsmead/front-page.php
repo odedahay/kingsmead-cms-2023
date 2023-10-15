@@ -283,7 +283,7 @@
 		<div class="columns is-multiline">
             <?php $args = array(
                 'post_type' => 'post',
-                'posts_per_type' => 2.,
+                'posts_per_type' => 2,
                 'category_name' => 'articles'
             ); 
             $postDisplay = new WP_Query($args);

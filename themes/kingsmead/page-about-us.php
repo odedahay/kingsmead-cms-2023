@@ -21,16 +21,22 @@ while(have_posts()){
 <section class="section about-page">
 	<div class="container page">
 		<div class="columns is-align-items_">
-			<div class="column is-4-desktop is-5-tablet">
-				<div class="about-item-img mt-3">
-					<img src="<?php echo get_theme_file_uri('images/img-520x480.jpg'); ?>" alt="<?php the_title(); ?>" class=" w-100">
-				</div>
-			</div>
 
-			<div class="column is-8-desktop is-7-tablet">
+			<div class="column is-7-desktop is-7-tablet">
 				<div class="about-item-content pl-5">
 					<?php the_content(); ?>
 				</div>
+			</div>
+			<div class="column is-5-desktop is-5-tablet">
+				<div class="about-item-img mt-3">
+					<?php 
+					if(has_post_thumbnail()){
+						the_post_thumbnail();
+					}else{ ?>
+						<img class="profile-creative-image" src="<?php echo get_theme_file_uri('images/img-1024x480.jpg')?>" alt="<?php the_title(); ?>"/>
+					<?php } 
+				?> 
+					</div>
 			</div>
 		</div>
 	</div>

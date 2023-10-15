@@ -56,3 +56,113 @@ h2.wp-block-heading{
     left: 0;
 }
 
+.sidebar-widget li{
+    list-style: none!important;
+    padding-top: 0.75rem!important;
+    padding-bottom: 0.75rem!important;
+    border-bottom: 1px solid #dee2e6 !important;
+    margin-left: 0px!important;   
+    padding-left: 10px;
+}
+
+.sidebar-widget li a{
+    display: block;
+    font-size: 18px;
+    color: #232323;
+    text-decoration: none;
+    font-family: "Bitter", serif;
+    font-weight: 900;
+    transition: all 0.4s ease 0s;
+}
+
+.sidebar-widget li a:hover{
+    color: #1f4997;
+}
+
+.sidebar-widget .current_page_item{
+    background-color: #fffee9
+}
+
+.section.blog-wrap{
+    padding: 50px 0 100px 0;
+}
+
+.sticky-sidebar{
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 20px;
+    transition: all 0.3s;
+}
+
+/* Meet our spiritual directors */
+
+.profile-list .list-unstyled li {
+    margin-left: 0;
+    list-style: none;
+}
+.profile-list .list-unstyled li .profile-area-box img{
+    margin-right: 1rem!important;
+    padding-top: 0.6rem!important;
+}
+
+/* Footer */
+.footer-menu li{
+    margin-bottom: 8px!important;
+}
+
+.footer-menu.list-styled {
+    color: rgba(255, 255, 255, 0.7);
+    list-style-type: disc;
+    list-style-position: inside;
+    padding-left: 0px;
+    margin-bottom: 5px;
+}
+
+.text-ssm{
+    font-size: 14px;
+}
+#wpcf7-f135-o1 input[type=text].wpcf7-form-control,
+#wpcf7-f135-o1 input[type=email].wpcf7-form-control{
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    background: transparent;
+    color: #fff;
+    padding-left: 10px;
+}
+
+#wpcf7-f135-o1 input[type=submit].wpcf7-form-control{
+    padding: 10px 25px;
+    font-size: 16px;
+    border-radius: 0.25rem !important;
+    color: #fff;
+    transition: all 0.2s ease;
+    background: #1e3877;
+    border-color: #154999;
+    border: 1px solid #154999;
+    box-shadow: none!important;
+    font-family: "Montserrat", sans-serif;
+}
+.wpcf7-form-control::-webkit-input-placeholder { /* WebKit browsers */
+    color: #fff !important;
+    opacity: .7;
+}
+.wpcf7-form-control:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    color: #fff !important;
+    opacity: .7;
+}
+.wpcf7-form-control::-moz-placeholder { /* Mozilla Firefox 19+ */
+    color: #fff !important;
+    opacity: .7;
+}
+.wpcf7-form-control:-ms-input-placeholder { /* Internet Explorer 10+ */
+    color: #fff !important;
+    opacity: .7;
+}
+
+#wpcf7-f135-o1 .wpcf7-response-output{
+    color: #fff!important;
+    border-color: #ff0000;
+}
+
+#wpcf7-f135-o1 .wpcf7-not-valid-tip{
+    color:  #ff5252;;
+}

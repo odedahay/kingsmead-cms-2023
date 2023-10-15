@@ -45,28 +45,27 @@
 
 			<div class="navbar-menu mr-0" id="navigation">
 				<ul class="navbar-end">					 
-					<li class="navbar-item">
+					<!-- <li class="navbar-item">
 						<a class="navbar-link" href="<?php echo site_url(); ?>">Home</a>
-					</li>
+					</li> -->
 					
 					<li class="navbar-item">
 						<a class="navbar-link" href="<?php echo site_url('/about-us')?>">About Us</a>
 					</li>
-
 					<li class="navbar-item has-dropdown is-hoverable">
 						<a href="#" class="navbar-link">Programmes<span class="ml-1"><i class="icofont-rounded-down"></i></span></a>
 						<div class="navbar-dropdown has-shadow">
 							<a class="navbar-item" href="<?php echo site_url('/retreat'); ?>">Retreat</a>
 							<a class="navbar-item" href="<?php echo site_url('/spiritual-direction'); ?>">Spiritual Direction</a>
 							<a class="navbar-item" href="<?php echo site_url('/counselling'); ?>">Counselling</a>
-							<a class="navbar-item" href="<?php echo site_url('/events'); ?>">Events</a>
+							<a class="navbar-item" href="<?php echo site_url('/ignatian-spirituality'); ?>">Ignatian Spirituality</a>
 						</div>
+					</li>
+					<li class="navbar-item">
+						<a class="navbar-link" href="<?php echo site_url('/events')?>">Events</a>
 					</li>
 					<li class="navbar-item has-dropdown is-hoverable">
 						<a href="<?php echo site_url('/newsletters-articles');?>" class="navbar-link">Newsletters & Articles</a>
-					</li>
-					<li class="navbar-item has-dropdown is-hoverable">
-						<a href="<?php echo site_url('/ignatian-spirituality'); ?>" class="navbar-link">Ignatian Spirituality</a>
 					</li>
 					
 					<li class="navbar-item">
