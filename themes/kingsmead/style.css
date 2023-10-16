@@ -166,3 +166,17 @@ h2.wp-block-heading{
 #wpcf7-f135-o1 .wpcf7-not-valid-tip{
     color:  #ff5252;;
 }
+
+/* GNB */
+.navbar-item.active{
+    background-color: #154999!important;
+    margin: 3px 0;
+    border-radius: 3px;
+}
+.navbar-item.active .navbar-link{
+    color: #ffffff!important;
+} 
+.navbar-item.active .navbar-link:hover{
+    color: #ffffff!important;
+    cursor:default;
+}

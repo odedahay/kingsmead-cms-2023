@@ -154,7 +154,7 @@
                     <?php the_post_thumbnail(); ?>
                 </div>
                 <div class="column">
-					<p class="h6 text-color is-size-6">
+					<p class="has-text-weight-semibold text-color is-size-6 mb-0">
 						<i class="icofont-clock-time mr-1"></i> <?php echo get_field('event_start_time') . " - " . get_field('event_end_time'); ?> 
 						<i class="icofont-calendar text-color ml-4 mr-1"></i>  <?php echo $eventDate->format('d F, Y'); ?></p>
                     <h2 class="content-title mb-4 is-size-3"><?php the_title(); ?></h2>
@@ -219,7 +219,7 @@
 				</div>
 			</div>
 			<div class="column">
-				<p class="h6 text-color is-size-6">
+				<p class="has-text-weight-semibold text-color is-size-6 mb-0">
 					<i class="icofont-clock-time mr-1"></i> <?php echo get_field('event_start_time') . " - " . get_field('event_end_time') ?> 
 					<i class="icofont-calendar text-color ml-4 mr-1"></i> <?php echo $eventDate2->format('d F, Y'); ?></p>
 				<h3 class="mb-4 is-size-3"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
@@ -241,9 +241,7 @@
 	<?php } wp_reset_postdata();?>
 </div>
 
-	
-
-</section>
+	</section>
 <section>
 	<div class="container">
 		<div class="columns is-justify-content-center">

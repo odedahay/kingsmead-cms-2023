@@ -44,15 +44,11 @@
 			</div>
 
 			<div class="navbar-menu mr-0" id="navigation">
-				<ul class="navbar-end">					 
-					<!-- <li class="navbar-item">
-						<a class="navbar-link" href="<?php echo site_url(); ?>">Home</a>
-					</li> -->
-					
-					<li class="navbar-item">
+				<ul class="navbar-end mr-0">			
+					<li class="navbar-item <?php if(is_page('about-us') OR  wp_get_post_parent_id(0) == 9 ) echo 'active' ?>">
 						<a class="navbar-link" href="<?php echo site_url('/about-us')?>">About Us</a>
 					</li>
-					<li class="navbar-item has-dropdown is-hoverable">
+					<li class="navbar-item has-dropdown <?php if(is_page('retreat') OR is_page('spiritual-direction') OR is_page('counselling') OR wp_get_post_parent_id(0) == 25 OR is_page('ignatian-spirituality') ) echo 'active' ?>">
 						<a href="#" class="navbar-link">Programmes<span class="ml-1"><i class="icofont-rounded-down"></i></span></a>
 						<div class="navbar-dropdown has-shadow">
 							<a class="navbar-item" href="<?php echo site_url('/retreat'); ?>">Retreat</a>
@@ -61,15 +57,15 @@
 							<a class="navbar-item" href="<?php echo site_url('/ignatian-spirituality'); ?>">Ignatian Spirituality</a>
 						</div>
 					</li>
-					<li class="navbar-item">
+					<li class="navbar-item <?php if(get_post_type() == 'event' OR is_page('past-events')) echo 'active'?>">
 						<a class="navbar-link" href="<?php echo site_url('/events')?>">Events</a>
 					</li>
-					<li class="navbar-item has-dropdown is-hoverable">
+					<li class="navbar-item <?php if(get_post_type() == 'post') echo 'active'?>">
 						<a href="<?php echo site_url('/newsletters-articles');?>" class="navbar-link">Newsletters & Articles</a>
 					</li>
 					
-					<li class="navbar-item">
-						<a href="<?php echo site_url('/contact-us'); ?>" class="navbar-link" >Contact Us</a>
+					<li class="navbar-item <?php if(is_page('contact-us')) echo 'active'?>">
+						<a href="<?php echo site_url('/contact-us'); ?>" class="navbar-link pr-5" >Contact Us </a>
 					</li>
 				</ul>
 			</div>
