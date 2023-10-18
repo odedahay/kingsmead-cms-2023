@@ -168,15 +168,13 @@ h2.wp-block-heading{
 }
 
 /* GNB */
-.navbar-item.active{
-    background-color: #154999!important;
-    margin: 3px 0;
-    border-radius: 3px;
+.btn-main:hover, .btn-small:hover{
+    color: #fff!important;
 }
 .navbar-item.active .navbar-link{
-    color: #ffffff!important;
+    color: #154999!important;
 } 
 .navbar-item.active .navbar-link:hover{
-    color: #ffffff!important;
+    color: #154999!important;
     cursor:default;
 }

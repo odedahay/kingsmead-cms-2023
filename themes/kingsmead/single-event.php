@@ -37,7 +37,12 @@ $eventDate2 = new DateTime(get_field('event_date'));
                     </div>
                     <hr>
                     <div class="py-3">
-                        <p class="mt-0"><a href="#" class="btn btn-main is-rounded mt-3 mr-5"> Sign Up <i class="icofont-arrow-right"></i></a></p>
+                        <p class="mt-0">
+                            <?php $link = get_field('sign_up_link');
+                            if( $link ): ?>
+                                <a href="<?php echo esc_url($link); ?>" target="_blank" class="btn btn-main is-rounded mt-3 mr-5"> Sign Up <i class="icofont-arrow-right"></i></a>
+                            <?php endif; ?>
+                        </p>
                        
                     </div>
                 </div>
