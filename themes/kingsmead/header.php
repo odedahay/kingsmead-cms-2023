@@ -14,15 +14,16 @@
 			<div class="columns is-gapless is-justify-content-space-between is-align-items-center">
 				<div class="column is-6-desktop is-4-tablet has-text-left-desktop has-text-centered-mobile">
 					<div class="header-top-info">
-						<a href="#"><i class="icofont-users mr-2"></i><span>Meet our spiritual directors</span></a>
-						<a href="#" ><i class="icofont-users mr-2"></i><span>Meet Our Counsellors</span></a>
+						<a href="<?php echo site_url('spiritual-direction/#spiritualderectors');?>"><i class="icofont-users mr-2"></i><span>Meet our spiritual directors</span></a>
+						<a href="<?php echo site_url('programmes/counselling/#counsellors');?>" ><i class="icofont-users mr-2"></i><span>Meet Our Counsellors</span></a>
 					</div>
 				</div>
 				<div class="column is-6-desktop is-8-tablet">
 					<div class="header-top-right has-text-right-tablet has-text-centered-mobile">
-						<a href="https://www.facebook.com/themefisher" target="_blank"><i class="icofont-facebook"></i></a>
-						<a href="#" target="_blank"><i class="icofont-youtube-play"></i></a>
-						<a href="#" target="_blank"><i class="icofont-phone"></i></a>
+						<a href="https://www.facebook.com/KingsmeadSpiritualityCentre" target="_blank"><i class="icofont-facebook"></i></a>
+						<a href="https://www.youtube.com/channel/UC0kU-yBIkZvlqBUMfYJhGjA" target="_blank"><i class="icofont-youtube-play"></i></a>
+						<a href="https://www.instagram.com/jesuits.malaysia.singapore/" target="_blank"><i class="icofont-instagram"></i></a>
+						<a href="tel:+6564676072" target="_blank"><i class="icofont-phone"></i></a>
 						<!-- <a href="#" class="top-btn"><i class="icofont-ui-search"></i></a> -->
 						<a href="<?php echo site_url('/donation'); ?>" class="top-btn">Donate</a>
 					</div>
@@ -53,7 +54,7 @@
 						<div class="navbar-dropdown has-shadow">
 							<a class="navbar-item" href="<?php echo site_url('/retreat'); ?>">Retreat</a>
 							<a class="navbar-item" href="<?php echo site_url('/spiritual-direction'); ?>">Spiritual Direction</a>
-							<a class="navbar-item" href="<?php echo site_url('/counselling'); ?>">Counselling</a>
+							<a class="navbar-item" href="<?php echo site_url('/programmes/counselling'); ?>">Counselling</a>
 							<a class="navbar-item" href="<?php echo site_url('/ignatian-spirituality'); ?>">Ignatian Spirituality</a>
 						</div>
 					</li>

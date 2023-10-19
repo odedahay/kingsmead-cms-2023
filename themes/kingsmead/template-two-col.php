@@ -105,7 +105,7 @@ $theParent = wp_get_post_parent_id(get_the_ID());
                             ?>
 
                             <hr class="" style="margin: 60px 0;">
-                            <div class="content mt-5" id="spiritualderectors">
+                            <div class="content mt-5" id="counsellors">
                                 <h2 class="mt-4">Meet Our Counsellors</h2>
                                 <p>The following persons offer the ministry of Counselling at Kingsmead Centre</p>
                             </div>
